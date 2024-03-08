@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+require('dotenv').config({
+    path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
+});
 
 const FirebaseSingleton = require('./third_party/db');
 const GCPLandmarkSingleton = require('./third_party/google_lens');
