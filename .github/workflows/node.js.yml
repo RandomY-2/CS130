@@ -33,7 +33,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.npm-cache.outputs.dir }}
-        key: ${{ runner.os }}-frontend-${{ hashFiles('CS130/frontend/package-lock.json') }}
+        key: ${{ runner.os }}-frontend-${{ hashFiles('frontend/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-frontend-
     
@@ -41,34 +41,34 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.npm-cache.outputs.dir }}
-        key: ${{ runner.os }}-backend-${{ hashFiles('CS130/backend/package-lock.json') }}
+        key: ${{ runner.os }}-backend-${{ hashFiles('backend/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-backend-
 
     # Frontend
     - name: Install and build frontend
       run: |
-        cd CS130/frontend
+        cd frontend
         npm ci
         npm run build --if-present
       shell: bash
 
     - name: Test frontend
       run: |
-        cd CS130/frontend
+        cd frontend
         npm test
       shell: bash
 
     # Backend
     - name: Install and build backend
       run: |
-        cd CS130/backend
+        cd backend
         npm ci
         npm run build --if-present
       shell: bash
 
     - name: Test backend
       run: |
-        cd CS130/backend
+        cd backend
         npm test
       shell: bash
