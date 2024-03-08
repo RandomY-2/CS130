@@ -8,7 +8,8 @@
     "server": "nodemon server --delay 500ms app.js",
     "client": "expo start client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start-dev": "nodemon app.js"
+    "start-dev": "nodemon app.js",
+    "test": "jest"
   },
   "author": "TravelBuddy Team",
   "license": "MIT",
@@ -30,8 +31,8 @@
     "mongoose": "^5.13.14",
     "multer": "^1.4.4",
     "multer-gridfs-storage": "^5.0.2",
-    "puppeteer": "^13.1.3",
-    "openai": "^3.3.0"
+    "openai": "^3.3.0",
+    "puppeteer": "^13.1.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
@@ -46,6 +47,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "jest": "^29.7.0",
     "nodemon": "^2.0.15",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
