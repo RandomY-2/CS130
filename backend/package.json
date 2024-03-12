@@ -9,7 +9,8 @@
     "client": "expo start client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start-dev": "nodemon app.js",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "build": "webpack"
   },
   "author": "TravelBuddy Team",
   "license": "MIT",
