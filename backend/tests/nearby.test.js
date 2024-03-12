@@ -34,7 +34,7 @@ describe("Nearby API tests without authentication", () => {
     const longitude = 10.001;
 
     const response = await request(app)
-      .post("/api/nearby/nearby")
+      .post("/api/nearby/")
       .send({ latitude, longitude });
 
     expect(response.statusCode).toBe(401);
@@ -49,7 +49,7 @@ describe("Nearby API tests with authentication", () => {
       const longitude = 10.001;
 
       const response = await request(app)
-        .post("/api/nearby/nearby")
+        .post("/api/nearby/")
         .set("authentication", authToken)
         .send({ latitude, longitude });
 
